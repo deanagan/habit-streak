@@ -11,7 +11,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     
-    <Grid RowDefinitions="Auto,*" Padding="20">
+    <Grid RowDefinitions="Auto,*,Auto" Padding="20">
         <Label 
             Text="Habit Streak Calendar"
             FontSize="24"
@@ -61,5 +61,27 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
+        <Border Grid.Row="2" 
+                Stroke="{StaticResource Primary}"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 10"
+                Margin="0,20,0,0"
+                Padding="20,10">
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label Text="🔥" 
+                       FontSize="32"
+                       VerticalOptions="Center"/>
+                <VerticalStackLayout Spacing="0">
+                    <Label Text="Current Streak"
+                           FontSize="14"
+                           TextColor="Gray"/>
+                    <Label Text="{Binding CurrentStreak, StringFormat='{0} days'}"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource Primary}"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </Border>
     </Grid>
 </ContentPage>

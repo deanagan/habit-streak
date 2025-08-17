@@ -5,6 +5,7 @@ namespace HabitStreak.Views;
 public partial class ProgressPage : ContentPage
 {
     public ObservableCollection<DateItem> DateItems { get; } = new();
+    public int CurrentStreak { get; private set; } = 345; // Hardcoded for demo
 
     public ProgressPage()
     {
