@@ -1,0 +1,9 @@
+namespace HabitStreak.Views;
+
+public partial class HabitsPage : ContentPage
+{
+	public HabitsPage()
+	{
+		InitializeComponent();
+	}
+}

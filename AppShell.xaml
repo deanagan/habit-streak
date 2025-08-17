@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="HabitStreak.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:HabitStreak"
-    Title="HabitStreak">
+    xmlns:views="clr-namespace:HabitStreak.Views"
+    x:Class="HabitStreak.AppShell">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Title="Habits" Icon="Add">
+        <ShellContent ContentTemplate="{DataTemplate views:HabitsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Progress" Icon="Chart">
+        <ShellContent ContentTemplate="{DataTemplate views:ProgressPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Settings" Icon="Settings">
+        <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
+    </FlyoutItem>
 
 </Shell>
