@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HabitStreak.Views.LogHabitPage"
+             Title="Log Habit">
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label 
+            Text="Log Your Achievement"
+            FontSize="24"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+
+        <Border Padding="15"
+                Stroke="{StaticResource Primary}"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10">
+            <VerticalStackLayout Spacing="15">
+                <HorizontalStackLayout Spacing="10">
+                    <CheckBox x:Name="AchievedCheckBox" 
+                             VerticalOptions="Center"
+                             IsChecked="{Binding IsAchieved}"/>
+                    <Label Text="Habit Achieved Today"
+                           VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <Entry Placeholder="Enter additional details (optional)"
+                       Text="{Binding Details}"
+                       MaxLength="500"/>
+
+                <Editor Placeholder="Tell your story (optional)"
+                        Text="{Binding Story}"
+                        HeightRequest="100"
+                        AutoSize="TextChanges"/>
+
+                <Button Text="Save"
+                        Command="{Binding SaveCommand}"
+                        HorizontalOptions="Fill"/>
+            </VerticalStackLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

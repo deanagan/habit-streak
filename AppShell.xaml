@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
+    x:Class="HabitStreak.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:HabitStreak"
-    xmlns:views="clr-namespace:HabitStreak.Views"
-    x:Class="HabitStreak.AppShell">
+    xmlns:views="clr-namespace:HabitStreak.Views">
 
-    <FlyoutItem Title="Habits" Icon="Add">
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="{StaticResource Primary}"
+              HeightRequest="100"
+              Padding="20">
+            <Label Text="Habit Streak"
+                   FontSize="28"
+                   TextColor="White"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Habits" Icon="list">
         <ShellContent ContentTemplate="{DataTemplate views:HabitsPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Progress" Icon="Chart">
+    <FlyoutItem Title="Progress" Icon="chart">
         <ShellContent ContentTemplate="{DataTemplate views:ProgressPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Settings" Icon="Settings">
+    <FlyoutItem Title="Settings" Icon="settings">
         <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
     </FlyoutItem>
 
 </Shell>
+
